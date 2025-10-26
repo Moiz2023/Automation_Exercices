@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver import Chrome
-from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support.wait import WebDriverWait
 
 from login_func import login_page
