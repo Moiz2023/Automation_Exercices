@@ -1,49 +1,58 @@
 from time import sleep
 
+from select import select
 from selenium.webdriver import Chrome
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import Select
 
-from User_Registration_func import register_user
-#Navigation to url and verification of the display of sign up form
-driver = Chrome()
-driver.get("https://automationexercise.com/")
-driver.maximize_window()
-driver.find_element(by=By.XPATH,value = "/html/body/div/div[2]/div[2]/div[2]/div[2]/button[1]").click()
-page_title = driver.title
+from driver_setup import get_driver
+from Open_website import open_home
+from go_to_signup import go_to_signup_form
+from account_form import fill_account_form
 
-print(page_title)
+driver=get_driver()
 
-driver.find_element(by=By.XPATH, value ="//a[normalize-space()='Signup / Login']").click()
-user_signup = driver.find_element(by=By.XPATH,value="//h2[normalize-space()='New User Signup!']")
-if user_signup.is_displayed():
-    print("User signup is displayed")
-else :
-    print("User signup is not displayed")
+user_data = {
+"password": "slimi",
+    "day": "26",
+    "month": "May",
+    "year": "1988",
+    "first_name": "Moez",
+    "last_name": "Slimi",
+    "address": "koningin astridlaan 56",
+    "country": "New Zealand",
+    "state": "oost vlaanderen",
+    "city": "wetteren",
+    "zipcode": "9230",
+    "mobile": "0470173175"
+}
+try:
+    open_home(driver,"https://automationexercise.com/")
+    go_to_signup_form(driver,"Moez","slimimoez@gmail.comm")
+    fill_account_form(driver,user_data)
+finally:
+    driver.quit()
 
 
-signup_form = driver.find_element(By.CLASS_NAME, "signup-form")
 
-wait = WebDriverWait(driver, timeout=2)
-wait.until(lambda _: signup_form.is_displayed())
 
-#register_user("Moiz","slimimoez@gmail.com")
-name=driver.find_element(by=By.XPATH,value="//input[@placeholder='Name']")
-email=driver.find_element(by=By.XPATH,value = "//input[@data-qa='signup-email']")
-btn_signup=driver.find_element(by=By.XPATH,value = "//button[normalize-space()='Signup']")
-name.send_keys("Moez")
-email.send_keys("slimimoez@gmail.com"
-                "")
-btn_signup.click()
 
-sleep(4)
 
-#Account information filling
-account_info = driver.find_element(by=By.XPATH,value="//b[normalize-space()='Enter Account Information']")
-if account_info.is_displayed():
-    print("Account information is displayed")
-else :
-    print("Account information is not displayed")
 
-gender=driver.find_element(by=By.ID,value = 'id_gender1')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
