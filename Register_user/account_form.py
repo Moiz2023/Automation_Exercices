@@ -33,6 +33,14 @@ def fill_account_form(driver, user_data):
     driver.find_element(by=By.ID, value='zipcode').send_keys(user_data["zipcode"])
 
     driver.find_element(by=By.ID, value='mobile_number').send_keys(user_data["mobile"])
-
+    #validation of success message
     driver.find_element(by=By.XPATH, value="//button[normalize-space()='Create Account']").click()
+    success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "//b[normalize-space()='Account Created!']")))
+    if success_msg.is_displayed():
+        print ("🎉 Account created successfully ! the message 'ACCOUNT CREATED!' is displayed.")
+    else:
+        print("❌ Message not displayed")
+
+
+
 

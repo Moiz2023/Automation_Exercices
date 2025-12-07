@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19115b53-f199-4ed1-8ea7-7c8e4eec6bce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Register_user/account_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Register_user/go_to_signup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Register_user/Test_Case1_Register_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Register_user/Test_Case1_Register_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Register_user/User_Registration_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/Register_user/Open_website.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Register_user/Wait_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/Register_user/driver_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Register_user/account_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Register_user/account_form.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
