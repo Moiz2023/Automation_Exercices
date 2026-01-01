@@ -31,7 +31,7 @@ user_data = {
 }
 try:
     open_home(driver,"https://automationexercise.com/")
-    go_to_signup_form(driver,"Moez","slimimoez@gmail.com")
+    go_to_signup_form(driver,"Moez","slimimoez@gmail.comlll")
     fill_account_form(driver,user_data)
     driver.find_element(by=By.XPATH,value="//a[normalize-space()='Continue']").click()
     driver.find_element(by=By.XPATH, value="//a[normalize-space()='Delete Account']").click()
@@ -41,6 +41,7 @@ try:
         print("🎉 Account deleted successfully ! the message 'ACCOUNT DELETED' is displayed.")
     else:
         print("❌ Message not displayed")
+
 
 finally:
     driver.quit()
